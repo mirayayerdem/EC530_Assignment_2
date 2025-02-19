@@ -1,7 +1,8 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.testclient import TestClient
+from app.main import app
 import pytest
-app = FastAPI()
+
 client = TestClient(app)
 
 @pytest.fixture

@@ -4,6 +4,7 @@ import pytest
 from pydantic import BaseModel, Field
 from typing import Optional, Literal
 import logging
+
 app = FastAPI()
 
 users = {}
@@ -81,7 +82,7 @@ class House(BaseModel):
 
 class UpdatedObject(BaseModel):
     name: str
-class UpdatedDevice(BaseModel)
+class UpdatedDevice(BaseModel):
     device_info: int
     
 #USER
@@ -468,12 +469,5 @@ def delete_room_device(house_id:int, floor_id: int, room_id:int, device_id:int):
                 return {"message": "Device deleted successfully"}
 
     raise HTTPException(status_code=404, detail="Device not found in the room")
-
-
-
-
-
-
-
 
 
